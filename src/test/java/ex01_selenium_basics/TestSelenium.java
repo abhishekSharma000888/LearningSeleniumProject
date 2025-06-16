@@ -1,4 +1,4 @@
-package selenium_basics;
+package ex01_selenium_basics;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
