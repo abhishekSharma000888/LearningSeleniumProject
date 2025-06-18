@@ -4,6 +4,7 @@ import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.CommonToAll;
 
 public class TestSelenium10_MiniProject_Selenium extends CommonToAll {
 
