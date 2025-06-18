@@ -1,4 +1,4 @@
-package ex03_SeleniumLocators;
+package ex04_xpath;
 
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
