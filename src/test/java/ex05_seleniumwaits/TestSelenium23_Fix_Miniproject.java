@@ -20,8 +20,6 @@ public class TestSelenium23_Fix_Miniproject {
     @Test
     @Description("Fixing the test using explicit waits")
     public void testVwoLoginNegative() {
-
-        public void testVwoLoginNegative () {
             ChromeOptions edgeOptions = new ChromeOptions();
             edgeOptions.addArguments("--incognito");
             edgeOptions.addArguments("--start-maximized");
@@ -52,4 +50,3 @@ public class TestSelenium23_Fix_Miniproject {
             driver.quit();
         }
     }
-}
