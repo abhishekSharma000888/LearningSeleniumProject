@@ -3,17 +3,21 @@ package utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import java.time.Duration;
 
 public class CommonToAll {
 
-    public WebDriver openBrowser(String url) {
-        WebDriver driver = new ChromeDriver();
+    public ChromeDriver driver;
+
+    public void openBrowser(WebDriver driver,String url){
         driver.get(url);
-        return driver;
+        driver.manage().window().maximize();
     }
 
         public void closeBrowser(WebDriver driver) {
@@ -33,5 +37,31 @@ public class CommonToAll {
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.xpath(xpath)),text));
     }
 
+    @BeforeTest
+    public void setUp(){
 
+        ChromeOptions edgeOptions = new ChromeOptions();
+        edgeOptions.addArguments("--guest");
+        driver = new ChromeDriver(new ChromeOptions());
+
+    }
+
+    @AfterTest
+    public void tearDown(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.quit();
+    }
+
+
+    public void waitForJVM(int time){
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
